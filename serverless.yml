@@ -1,0 +1,19 @@
+service: my-app-service
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: python3.8
+  lambdaHashingVersion: 20201221
+  stage: dev
+  region: ap-northeast-3
+  memorySize: 512
+  timeout: 60
+
+functions:
+  billingBot:
+    handler: handler.lambda_handler
+    events:
+      - schedule: cron(0 12 * * ? *)
+    environment:
+      slack_url: https://hooks.slack.com/services/XXXXXXXXXX
