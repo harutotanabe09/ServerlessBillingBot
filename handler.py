@@ -97,7 +97,7 @@ def post_slack(title: str, detail: str) -> None:
             {
                 "type": "section",
                 "text": {
-                    "type": "mrkdwn",
+                    "type": "mrkdwn",git push -u origin main
                     "text": "This is a New Slack WebHook <https://api.slack.com/reference/block-kit/blocks#context|this is a link>"
                 }
             },
